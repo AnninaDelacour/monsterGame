@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>The Monster Slayer</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+
+    <div id="monsterSlayer">
+
+        <div class="container">
+            <section class="row">
+                <div class="col-6">
+                    <h1 class="text-center">YOU</h1>
+                    <div class="healthbar">
+                        <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" :style="{width: playerHealth + '%'}">
+                            {{playerHealth}}
+                            <!-- durch :style kann vue auf .js files und css zugreifen; obwohl im CSS-File
+                            nur 80% angegeben sind, orientiert sich die playerHealth mit '%' am äußeren healthbar-div bzgl. der width-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <h1 class="text-center">MONSTER</h1>
+                    <div class="healthbar">
+                        <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;" :style="{width: monsterHealth + '%'}">
+                            {{monsterHealth}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container">
+            <section class="row controls ">
+                <div class="col d-flex justify-content-center ">
+                    <button id="start-game ">START NEW GAME</button>
+            </section>
+            </div>
+
+            <div class="container">
+                <section class="row controls ">
+                    <div class="col ">
+                        <button id="attack">ATTACK</button>
+                        <button id="special-attack ">SPECIAL ATTACK</button>
+                        <button id="heal">HEAL</button>
+                        <button id="give-up">GIVE UP</button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="container ">
+                <section class="row log ">
+                    <div class="col ">
+                        <ul>
+                            <li>
+
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+
+
+        </div>
+
+
+
+        <script src="monsterSlayer.js "></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>
