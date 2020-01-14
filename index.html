@@ -39,39 +39,39 @@
                     </div>
                 </div>
             </section>
-        </div>
 
-        <div class="container">
-            <section class="row controls ">
+
+
+            <section class="row controls" v-if="!gameIsRunning">
                 <div class="col d-flex justify-content-center ">
-                    <button id="start-game ">START NEW GAME</button>
+                    <button id="start-game" @click="startGame">START NEW GAME</button>
             </section>
+
+
+
+            <section class="row controls" v-else>
+                <div class="col">
+                    <button id="attack" @click="attack">ATTACK</button>
+                    <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
+                    <button id="heal" @click="heal">HEAL</button>
+                    <button id="give-up" @click="reset">GIVE UP</button>
+                </div>
+            </section>
+
+
+
+            <section class="row log" v-if="turns.length > 0">
+                <div class="col ">
+                    <ul>
+                        <li v-for="turn in turns" :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">
+                            {{ turn.text }}
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
             </div>
-
-            <div class="container">
-                <section class="row controls ">
-                    <div class="col ">
-                        <button id="attack">ATTACK</button>
-                        <button id="special-attack ">SPECIAL ATTACK</button>
-                        <button id="heal">HEAL</button>
-                        <button id="give-up">GIVE UP</button>
-                    </div>
-                </section>
-            </div>
-
-            <div class="container ">
-                <section class="row log ">
-                    <div class="col ">
-                        <ul>
-                            <li>
-
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-
-
 
         </div>
 

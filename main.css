@@ -94,7 +94,8 @@ button {
 }
 
 #give-up {
-  background-color: #ffffff;
+  background-color: #000;
+  color: #fff;
 }
 
 #give-up:hover {
